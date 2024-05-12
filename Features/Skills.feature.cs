@@ -73,26 +73,28 @@ namespace Marsproject.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 6
+#line hidden
+#line 7
+testRunner.Given("Clean all skills before adding new skills in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A.User able to enter their known skills and levels")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
         [NUnit.Framework.TestCaseAttribute("\'Communication\'", "\'Expert\'", null)]
         [NUnit.Framework.TestCaseAttribute("\'Behavioural\'", "\'Intermediate\'", null)]
         [NUnit.Framework.TestCaseAttribute("\'Dancing\'", "\'Beginner\'", null)]
         public void A_UserAbleToEnterTheirKnownSkillsAndLevels(string skills, string levels, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "tag1"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Skills", skills);
             argumentsOfScenario.Add("Levels", levels);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A.User able to enter their known skills and levels", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -102,13 +104,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 10
 testRunner.Given(string.Format("User able to enter their known skills{0}", skills), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 11
 testRunner.Then(string.Format("User able to enter their skill levels{0}", levels), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 9
+#line 12
 testRunner.And(string.Format("validate skills and levels are added correctly{0}", skills), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -118,6 +123,7 @@ testRunner.And(string.Format("validate skills and levels are added correctly{0}"
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("B.User able to Edit skills and levels")]
         [NUnit.Framework.TestCaseAttribute("\'Music\'", "\'Beginner\'", null)]
+        [NUnit.Framework.TestCaseAttribute("\'243243%^^\'", "\'Expert\'", null)]
         public void B_UserAbleToEditSkillsAndLevels(string newSkill, string newlevel, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -125,7 +131,7 @@ testRunner.And(string.Format("validate skills and levels are added correctly{0}"
             argumentsOfScenario.Add("NewSkill", newSkill);
             argumentsOfScenario.Add("Newlevel", newlevel);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("B.User able to Edit skills and levels", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 17
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -135,13 +141,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 18
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 21
 testRunner.Given(string.Format("User able to Edit the Skill field{0}", newSkill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 19
+#line 22
 testRunner.Then(string.Format("User able to Edit the levels field{0}", newlevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 20
+#line 23
 testRunner.And(string.Format("Validate Skills and levels field are updated correctly{0}", newSkill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -150,12 +159,15 @@ testRunner.And(string.Format("Validate Skills and levels field are updated corre
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("C.User able do delete skill record")]
-        public void C_UserAbleDoDeleteSkillRecord()
+        [NUnit.Framework.TestCaseAttribute("\'Music\'", "\'Beginner\'", null)]
+        public void C_UserAbleDoDeleteSkillRecord(string skills, string levels, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Skills", skills);
+            argumentsOfScenario.Add("Levels", levels);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("C.User able do delete skill record", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 26
+#line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -165,8 +177,114 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 27
-testRunner.Given("User able to delete the skills and levels they entered on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 31
+testRunner.Given(string.Format("User able to delete the skills and levels they entered on the page{0}{1}", skills, levels), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 32
+testRunner.Then("User will get delete notification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User try to add skills as null and levels")]
+        [NUnit.Framework.TestCaseAttribute("\'\'", "\'Beginner\'", null)]
+        [NUnit.Framework.TestCaseAttribute("\'\'", "\'\'", null)]
+        public void UserTryToAddSkillsAsNullAndLevels(string skills, string levels, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Skills", skills);
+            argumentsOfScenario.Add("Levels", levels);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User try to add skills as null and levels", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 38
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 39
+testRunner.Given(string.Format("User try to enter skills filed as Null and levels{0}{1}", skills, levels), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 40
+testRunner.Then("User see  the Warning notification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User try add skills without levels")]
+        [NUnit.Framework.TestCaseAttribute("\'Music\'", null)]
+        public void UserTryAddSkillsWithoutLevels(string skills, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Skills", skills);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User try add skills without levels", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 47
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 48
+testRunner.Given(string.Format("User try add skills without levels{0}", skills), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 49
+testRunner.Then("User seethe Warning notification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User try to add same skills again")]
+        [NUnit.Framework.TestCaseAttribute("\'Music\'", "\'Beginner\'", null)]
+        [NUnit.Framework.TestCaseAttribute("\'Music\'", "\'Expert\'", null)]
+        public void UserTryToAddSameSkillsAgain(string skills, string levels, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Skills", skills);
+            argumentsOfScenario.Add("Levels", levels);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User try to add same skills again", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 55
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 56
+testRunner.Given(string.Format("User try to add same skills again and again{0}{1}", skills, levels), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 57
+testRunner.Then("User see the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

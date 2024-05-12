@@ -74,12 +74,12 @@ namespace Marsproject.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User able to login in Mars portal")]
-        public void UserAbleToLoginInMarsPortal()
+        [NUnit.Framework.DescriptionAttribute("A.User able to login in Mars portal")]
+        public void A_UserAbleToLoginInMarsPortal()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User able to login in Mars portal", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A.User able to login in Mars portal", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -98,15 +98,15 @@ testRunner.Given("User able to login with valid cerdentials", ((string)(null)), 
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User able to login in Mars portal with invalid Cerdentials")]
+        [NUnit.Framework.DescriptionAttribute("B. User try to login in Mars portal with invalid username and password")]
         [NUnit.Framework.TestCaseAttribute("\'dhivya@gamkil.com\'", "\'dhivya1\'", null)]
-        public void UserAbleToLoginInMarsPortalWithInvalidCerdentials(string email_ID, string password, string[] exampleTags)
+        public void B_UserTryToLoginInMarsPortalWithInvalidUsernameAndPassword(string email_ID, string password, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Email_ID", email_ID);
             argumentsOfScenario.Add("Password", password);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User able to login in Mars portal with invalid Cerdentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("B. User try to login in Mars portal with invalid username and password", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -119,6 +119,101 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 10
 testRunner.Given(string.Format("User try to login with invalid EmailID{0}{1}", email_ID, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("C. User try to login with valid username and invalid password")]
+        [NUnit.Framework.TestCaseAttribute("\'dhivyaglitz23@gmail.com\'", "\'1234#$\'", null)]
+        [NUnit.Framework.TestCaseAttribute("\'dhivyaglitz23@gmail.com\'", "\'\'", null)]
+        public void C_UserTryToLoginWithValidUsernameAndInvalidPassword(string email_ID, string password, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Email_ID", email_ID);
+            argumentsOfScenario.Add("Password", password);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("C. User try to login with valid username and invalid password", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 16
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 17
+testRunner.Given(string.Format("user try to login with valid username and invalid password{0}{1}", email_ID, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 18
+testRunner.Then("User will get Error Notification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("D.User try to login with invalid username and valid password")]
+        [NUnit.Framework.TestCaseAttribute("\'1234%^&\'", "\'Dhivya@23\'", null)]
+        [NUnit.Framework.TestCaseAttribute("\'\'", "\'Dhivya@23 \'", null)]
+        public void D_UserTryToLoginWithInvalidUsernameAndValidPassword(string email_ID, string password, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Email_ID", email_ID);
+            argumentsOfScenario.Add("Password", password);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("D.User try to login with invalid username and valid password", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 25
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 26
+testRunner.Given(string.Format("User try to login with invalid username and valid password{0}{1}", email_ID, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 27
+testRunner.Then("User will see the warning notification in Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("E.User try to login when both the fields are empty")]
+        [NUnit.Framework.TestCaseAttribute("\'\'", "\'\'", null)]
+        public void E_UserTryToLoginWhenBothTheFieldsAreEmpty(string email_ID, string password, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Email_ID", email_ID);
+            argumentsOfScenario.Add("Password", password);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("E.User try to login when both the fields are empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 33
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 34
+testRunner.Given(string.Format("User keep both username and password field empty and click on Login {0}{1}", email_ID, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 35
+testRunner.Then("User will see the warning in username field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 36
+testRunner.Then("user will see the warning in password field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

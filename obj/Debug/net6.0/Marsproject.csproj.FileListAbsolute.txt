@@ -120,3 +120,4 @@ C:\Mars\Marsproject\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Mars\Marsproject\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Mars\Marsproject\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Mars\Marsproject\bin\Debug\net6.0\SeleniumExtras.WaitHelpers.dll
+C:\Mars\Marsproject\obj\Debug\net6.0\Marsproject.sourcelink.json
