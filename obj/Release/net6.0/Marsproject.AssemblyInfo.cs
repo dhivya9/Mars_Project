@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marsproject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc196fc62f67d4692ed5d51b344c0aedbbdcbbff")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marsproject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marsproject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

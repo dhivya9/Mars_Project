@@ -73,6 +73,15 @@ namespace Marsproject.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 5
+#line hidden
+#line 6
+testRunner.Given("Delete all before adding new langauge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A.User able to enter the known languages and levels")]
         [NUnit.Framework.TestCaseAttribute("\'Tamil\'", "\'Telugu\'", "\'English\'", "\'French\'", null)]
@@ -85,7 +94,7 @@ namespace Marsproject.Features
             argumentsOfScenario.Add("language3", language3);
             argumentsOfScenario.Add("language4", language4);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A.User able to enter the known languages and levels", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 4
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -96,12 +105,12 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
-testRunner.Given("User able to signin the Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.FeatureBackground();
 #line hidden
-#line 6
-testRunner.When(string.Format("user able to enter their language{0}{1}{2}{3}", language1, language2, language3, language4), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+testRunner.Given(string.Format("user able to enter their language{0}{1}{2}{3} and levels", language1, language2, language3, language4), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 12
 testRunner.Then("verify user can able add more than four values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -118,7 +127,7 @@ testRunner.Then("verify user can able add more than four values", ((string)(null
             argumentsOfScenario.Add("newlanguage", newlanguage);
             argumentsOfScenario.Add("levels", levels);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("B.User able to update the language and levels", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 14
+#line 19
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -128,13 +137,13 @@ testRunner.Then("verify user can able add more than four values", ((string)(null
             else
             {
                 this.ScenarioStart();
-#line 15
- testRunner.Given(string.Format("User able to edit the language filed{0}", newlanguage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
+this.FeatureBackground();
 #line hidden
-#line 16
- testRunner.When(string.Format("User able to edit the levels{0}", levels), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.Given(string.Format("User able to edit the language filed{0}{1}", newlanguage, levels), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 17
+#line 21
  testRunner.Then("verify the both fields update successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -143,12 +152,15 @@ testRunner.Then("verify user can able add more than four values", ((string)(null
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("C.User able to delete the record")]
-        public void C_UserAbleToDeleteTheRecord()
+        [NUnit.Framework.TestCaseAttribute("\'Italy\'", "\'Basic\'", null)]
+        public void C_UserAbleToDeleteTheRecord(string deletelanguage, string levels, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Deletelanguage", deletelanguage);
+            argumentsOfScenario.Add("levels", levels);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("C.User able to delete the record", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 23
+#line 28
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -158,11 +170,139 @@ testRunner.Then("verify user can able add more than four values", ((string)(null
             else
             {
                 this.ScenarioStart();
-#line 24
- testRunner.Given("User able to give cancel from edit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
+this.FeatureBackground();
 #line hidden
-#line 25
- testRunner.Given("User able to delete the record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 29
+testRunner.Given(string.Format("User able to delete the record{0}{1}", deletelanguage, levels), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("D.User try to Add langauge without levels")]
+        [NUnit.Framework.TestCaseAttribute("\'Japanese\'", null)]
+        public void D_UserTryToAddLangaugeWithoutLevels(string addlanguage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Addlanguage", addlanguage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("D.User try to Add langauge without levels", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 34
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+#line 35
+testRunner.Given(string.Format("User able to add the language and levels as null{0}", addlanguage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 36
+testRunner.Then("User able to see Error notification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("E.User able to Enterlangauge with Special Character")]
+        [NUnit.Framework.TestCaseAttribute("\'#$%^&*  \'", null)]
+        public void E_UserAbleToEnterlangaugeWithSpecialCharacter(string speciallanguage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Speciallanguage", speciallanguage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("E.User able to Enterlangauge with Special Character", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 42
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+#line 43
+ testRunner.Given(string.Format("User able to enter lanaguges  with Special Character{0}", speciallanguage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("F.User able to add langauge as null and levels")]
+        [NUnit.Framework.TestCaseAttribute("\'\'", "\'Fluent\'", null)]
+        [NUnit.Framework.TestCaseAttribute("\'\'", "\'\'", null)]
+        public void F_UserAbleToAddLangaugeAsNullAndLevels(string languages, string levels, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Languages", languages);
+            argumentsOfScenario.Add("levels", levels);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("F.User able to add langauge as null and levels", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 50
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+#line 51
+ testRunner.Given(string.Format("User able to add language as null {0}{1}", languages, levels), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 52
+ testRunner.Then("User see the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("G.User try to add same langauge again")]
+        [NUnit.Framework.TestCaseAttribute("\'English\'", "\'Fluent\'", null)]
+        public void G_UserTryToAddSameLangaugeAgain(string languages, string levels, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Languages", languages);
+            argumentsOfScenario.Add("levels", levels);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("G.User try to add same langauge again", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 59
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+#line 60
+ testRunner.Given(string.Format("User try to add same langauge twice{0}{1}", languages, levels), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 61
+ testRunner.Then("User able to see the warning notification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
